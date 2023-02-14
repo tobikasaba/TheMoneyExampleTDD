@@ -9,6 +9,7 @@
 # Member with username "john.smith" and member with email "alex@mycompany.com"
 # own any JavaScript file in repository
 # *.js john.smith alex@mycompany.com
+* tkasaba
 
 # Bob owns all files under "subdir" directory at the repository root and all its subdirectories
 # /subdir/ Bob
