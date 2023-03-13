@@ -19,4 +19,19 @@ class FizzBuzzTest {
     void printBuzz() {
         Assertions.assertEquals("Buzz", fizzBuzz.print(3));
     }
+
+    @Test
+    void containsFizz() {
+        Assertions.assertEquals("Fizz", fizzBuzz.print(52));
+    }
+
+    @Test
+    void printTwo() {
+        Assertions.assertEquals("2", fizzBuzz.print(2));
+    }
+
+    @Test
+    void containsBuzz() {
+        Assertions.assertEquals("Buzz", fizzBuzz.print(31));
+    }
 }
