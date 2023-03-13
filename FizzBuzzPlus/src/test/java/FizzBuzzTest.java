@@ -3,17 +3,20 @@ import org.junit.jupiter.api.Test;
 
 class FizzBuzzTest {
 
+    FizzBuzz fizzBuzz = new FizzBuzz();
+
     @Test
     void printOne() {
-        FizzBuzz fizzBuzz = new FizzBuzz();
-        String fizzBuzzOutput = fizzBuzz.print(1);
-        Assertions.assertEquals("1", fizzBuzzOutput);
+        Assertions.assertEquals("1", fizzBuzz.print(1));
     }
 
     @Test
     void printFizz() {
-        FizzBuzz fizzBuzz = new FizzBuzz();
-        String fizzPrint = fizzBuzz.print(5);
-        Assertions.assertEquals("Fizz", fizzPrint);
+        Assertions.assertEquals("Fizz", fizzBuzz.print(5));
+    }
+
+    @Test
+    void printBuzz() {
+        Assertions.assertEquals("Buzz", fizzBuzz.print(3));
     }
 }
