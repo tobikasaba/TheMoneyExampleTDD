@@ -4,11 +4,22 @@ public class FizzBuzz {
     }
 
     public String print(int number) {
+        StringBuilder result = new StringBuilder();
         if (number % 5 == 0 || Integer.toString(number).contains("5")) {
-            return "Fizz";
-        } else if (number % 3 == 0 || Integer.toString(number).contains("3")) {
-            return "Buzz";
+            result.append("Fizz");
         }
-        return Integer.toString(number);
+        if (number % 3 == 0 || Integer.toString(number).contains("3")) {
+            result.append("Buzz");
+        }
+        if (result.length() == 0) {
+            result.append(number);
+        }
+        return result.toString();
+    }
+
+    public void printAll() {
+        for (int i = 1; i <= 100; i++) {
+            System.out.println(print(i));
+        }
     }
 }

@@ -34,4 +34,16 @@ class FizzBuzzTest {
     void containsBuzz() {
         Assertions.assertEquals("Buzz", fizzBuzz.print(31));
     }
+
+    @Test
+    void containsFizzBuzz() {
+        int[] values = {51, 15};
+        for (int i : values)
+            Assertions.assertEquals("FizzBuzz", fizzBuzz.print(i));
+    }
+
+    @Test
+    void printAll() {
+        fizzBuzz.printAll();
+    }
 }
