@@ -35,10 +35,10 @@ Specification
 
 
 To Do List
+
+
+Completed
     test and create the type of burger thats being ordered
     test and create the price of the burger being ordered
     check the burger can order toppings
     check the burger can only order a max of 3 toppings
-
-
-Completed

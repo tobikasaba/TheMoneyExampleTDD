@@ -2,6 +2,8 @@ public class Burger {
     private int price;
     private String type;
 
+    private int toppings;
+
     public Burger(String type, int price) {
         this.type = type;
         this.price = price;
@@ -23,5 +25,15 @@ public class Burger {
         }
     }
 
+    public int getToppings() {
+        return toppings;
+    }
 
+    public void setToppings(int toppings) {
+        if (toppings > 3 || toppings < 0) {
+            throw new IllegalArgumentException("Maximum of 3 toppings allowed and negative values are invalid");
+        } else {
+            this.toppings = toppings;
+        }
+    }
 }

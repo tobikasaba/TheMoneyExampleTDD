@@ -5,24 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21842c49-81d7-425a-8108-067cd19bbce1" name="Changes" comment="testing for fizzBuzz and printing out values from 1 to 100">
-      <change afterPath="$PROJECT_DIR$/../BillsBurgerChallenge/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BillsBurgerChallenge/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BillsBurgerChallenge/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BillsBurgerChallenge/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BillsBurgerChallenge/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BillsBurgerChallenge/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BillsBurgerChallenge/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BillsBurgerChallenge/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BillsBurgerChallenge/src/main/resources/META-INF/maven/archetype.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BillsBurgerChallenge/src/main/resources/archetype-resources/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BillsBurgerChallenge/src/main/resources/archetype-resources/src/main/java/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BillsBurgerChallenge/src/main/resources/archetype-resources/src/test/java/AppTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BillsBurgerChallenge/src/test/java/Burger.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BillsBurgerChallenge/src/main/java/Burger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BillsBurgerChallenge/src/main/java/Drink.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BillsBurgerChallenge/src/main/java/Burger.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BillsBurgerChallenge/src/main/java/Burger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BillsBurgerChallenge/src/test/java/MealOrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BillsBurgerChallenge/src/test/java/MealOrderTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BillsBurgerChallenge/toDoList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../BillsBurgerChallenge/toDoList.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TheMoneyExample/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TheMoneyExample/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TheMoneyExample/src/test/java/CurrencyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TheMoneyExample/src/test/java/CurrencyTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TheMoneyExample/target/test-classes/CurrencyTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../TheMoneyExample/target/test-classes/CurrencyTest.class" afterDir="false" />
     </list>
