@@ -1,11 +1,12 @@
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class MealOrderTest {
     Burger cheeseburger = new Burger("Cheeseburger", 20);
     Drink wine = new Drink("Wine", 20);
+    Side fries = new Side("Fries", 5);
 
     @Test
     void burgerType() {
@@ -18,14 +19,13 @@ public class MealOrderTest {
     }
 
     @Test
-    void doesPriceBelowOneThrowIllegalArgumentException() {
+    void doesBurgerPriceBelowOneThrowIllegalArgumentException() {
 /*
         IllegalArgumentException priceBelowZero = Assertions.assertThrows(IllegalArgumentException.class, () -> {
             cheeseburger.setPrice(0);
         });
  */
-        IllegalArgumentException priceBelowZero = Assertions.assertThrows(IllegalArgumentException.class,
-                () -> cheeseburger.setPrice(0));
+        IllegalArgumentException priceBelowZero = assertThrows(IllegalArgumentException.class, () -> cheeseburger.setPrice(0));
         assertEquals(priceBelowZero.getMessage(), "Price can't be below 1");
     }
 
@@ -37,8 +37,7 @@ public class MealOrderTest {
 
     @Test
     void maximumOfThreeToppings() {
-        IllegalArgumentException maximumToppings = Assertions.assertThrows(IllegalArgumentException.class,
-                () -> cheeseburger.setToppings(4));
+        IllegalArgumentException maximumToppings = assertThrows(IllegalArgumentException.class, () -> cheeseburger.setToppings(4));
         assertEquals(maximumToppings.getMessage(), "Maximum of 3 toppings allowed and negative values are invalid");
     }
 
@@ -47,7 +46,6 @@ public class MealOrderTest {
         assertEquals("Wine", wine.getType());
     }
 
-
     @Test
     void drinkSize() {
         assertEquals(20, wine.getSize());
@@ -55,13 +53,30 @@ public class MealOrderTest {
 
     @Test
     void doesDrinkSizeBelowOneHundredThrowIllegalArgumentException() {
-        IllegalArgumentException drinkSizeBelowHundred = Assertions.assertThrows(IllegalArgumentException.class,
-                () -> wine.setSize(99));
-        Assertions.assertEquals(drinkSizeBelowHundred.getMessage(), "Drinks cant be less that 100 ml");
+        IllegalArgumentException drinkSizeBelowHundred = assertThrows(IllegalArgumentException.class, () -> wine.setSize(99));
+        assertEquals(drinkSizeBelowHundred.getMessage(), "Drinks cant be less that 100 ml");
     }
 
     @Test
-    void getPrice() {
-        assertEquals(40, wine.getPrice());
+    void drinkPrice() {
+        assertEquals(30, wine.getPrice());
+    }
+
+    @Test
+    void sideType() {
+        assertEquals("Fries", fries.getType());
+    }
+
+    @Test
+    void sidePrice() {
+        assertEquals(5, fries.getPrice());
+    }
+
+
+    @Test
+    void doesSidePriceBelowOneThrowIllegalArgumentException() {
+        IllegalArgumentException priceBelowZero = assertThrows(IllegalArgumentException.class,
+                () -> fries.setPrice(0));
+        assertEquals(priceBelowZero.getMessage(), "Price can't be below 1");
     }
 }

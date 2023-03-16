@@ -12,7 +12,7 @@ public class Drink {
     }
 
     public double getPrice() {
-        return size * 2;
+        return size * 1.5;
     }
 
     public double getSize() {
