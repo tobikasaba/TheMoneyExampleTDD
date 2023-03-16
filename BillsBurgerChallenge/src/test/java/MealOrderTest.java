@@ -1,19 +1,30 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class MealOrderTest {
-    Burger burger = new Burger("Cheeseburger", 20);
+    Burger cheeseburger = new Burger("Cheeseburger", 20);
 
     @Test
     void burgerType() {
-        String cheeseburger = burger.burgerType("Cheeseburger");
-        Assertions.assertEquals("Cheeseburger", cheeseburger);
+        assertEquals("Cheeseburger", cheeseburger.getType());
     }
 
     @Test
     void burgerPrice() {
-        int cheeseburger = burger.burgerPrice(20);
-        Assertions.assertEquals(20, cheeseburger);
+        assertEquals(20, cheeseburger.getPrice());
     }
 
+    @Test
+    void doesPriceBelowOneThrowIllegalArgumentException() {
+/*
+        IllegalArgumentException priceBelowZero = Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            cheeseburger.setPrice(0);
+        });
+ */
+        IllegalArgumentException priceBelowZero = Assertions.assertThrows(IllegalArgumentException.class,
+                () -> cheeseburger.setPrice(0));
+        assertEquals(priceBelowZero.getMessage(), "Price can't be below 1");
+    }
 }
