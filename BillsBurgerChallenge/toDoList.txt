@@ -1,0 +1,44 @@
+Specification
+    Create a Meal Order Class
+        burger, drink, side item
+        method called most common order
+        second method that allows you to have any order that includes burger, drink and side
+
+    Drink and side item
+        type of drink
+        size of drink
+        prince of the drink(changes for each size)
+
+        type of side
+        price of side
+
+
+    Burgers
+        type of burger
+        price of burger
+        max of 3 toppings
+        constructor should only include burger type and price
+
+        Deluxe burger bonus
+            Create a deluxe burger meal, with a deluxe burger,
+                that has a set price, so that any additional toppings do not change the price.
+            The deluxe burger should have room for an additional two toppings.
+
+    Main method
+        Create a default meal, that uses the no arguments constructor.
+        Create a meal with a burger, and the drink and side item of
+            your choice, with up to 3 extra toppings.
+        Create a meal with a deluxe burger, where all items, drink,
+            side item and toppings up to 5 extra toppings, are included in the burger price.
+
+
+
+
+To Do List
+    test and create the type of burger thats being ordered
+    test and create the price of the burger being ordered
+    check the burger can order toppings
+    check the burger can only order a max of 3 toppings
+
+
+Completed
