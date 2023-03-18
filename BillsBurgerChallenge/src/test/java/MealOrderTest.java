@@ -8,6 +8,8 @@ public class MealOrderTest {
     Drink wine = new Drink("Wine", 20);
     Side fries = new Side("Fries", 5);
 
+    DeluxeBurger doubleCheeseburger = new DeluxeBurger("Double Cheeseburger");
+
     @Test
     void burgerType() {
         assertEquals("Cheeseburger", cheeseburger.getType());
@@ -78,5 +80,27 @@ public class MealOrderTest {
         IllegalArgumentException priceBelowZero = assertThrows(IllegalArgumentException.class,
                 () -> fries.setPrice(0));
         assertEquals(priceBelowZero.getMessage(), "Price can't be below 1");
+    }
+
+    @Test
+    void deluxeBurgerType() {
+        assertEquals("Double Cheeseburger", doubleCheeseburger.getType());
+    }
+
+    @Test
+    void deluxeBurgerPrice() {
+        assertEquals(30, doubleCheeseburger.getPrice());
+    }
+
+    @Test
+    void deluxeBurgerToppings() {
+        doubleCheeseburger.setToppings(3);
+        assertEquals(3, doubleCheeseburger.getToppings());
+    }
+
+    @Test
+    void maximumOfFiveToppingsForDeluxeBurger() {
+        IllegalArgumentException maximumToppings = assertThrows(IllegalArgumentException.class, () -> doubleCheeseburger.setToppings(-1));
+        assertEquals(maximumToppings.getMessage(), "Maximum of 5 toppings allowed and negative values are invalid");
     }
 }

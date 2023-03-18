@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21842c49-81d7-425a-8108-067cd19bbce1" name="Changes" comment="testing for fizzBuzz and printing out values from 1 to 100">
-      <change beforePath="$PROJECT_DIR$/../BillsBurgerChallenge/src/main/java/Drink.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BillsBurgerChallenge/src/main/java/Drink.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BillsBurgerChallenge/src/test/java/MealOrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BillsBurgerChallenge/src/test/java/MealOrderTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BillsBurgerChallenge/toDoList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../BillsBurgerChallenge/toDoList.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />

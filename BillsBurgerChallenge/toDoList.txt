@@ -35,12 +35,13 @@ Specification
 
 
 To Do List
-    Type of side
-    Price of side
+
 
 Completed
     test and create the type of burger thats being ordered
     test and create the price of the burger being ordered
     check the burger can order toppings
     check the burger can only order a max of 3 toppings
+    Type of side
+    Price of side
 
