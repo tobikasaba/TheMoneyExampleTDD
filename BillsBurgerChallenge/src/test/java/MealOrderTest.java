@@ -77,8 +77,7 @@ public class MealOrderTest {
 
     @Test
     void doesSidePriceBelowOneThrowIllegalArgumentException() {
-        IllegalArgumentException priceBelowZero = assertThrows(IllegalArgumentException.class,
-                () -> fries.setPrice(0));
+        IllegalArgumentException priceBelowZero = assertThrows(IllegalArgumentException.class, () -> fries.setPrice(0));
         assertEquals(priceBelowZero.getMessage(), "Price can't be below 1");
     }
 
