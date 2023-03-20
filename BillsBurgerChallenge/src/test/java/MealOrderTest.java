@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class MealOrderTest {
     Burger cheeseburger = new Burger("Cheeseburger", 20);
-    Drink wine = new Drink("Wine", 20);
+    Drink wine = new Drink("Wine", 100);
     Side fries = new Side("Fries", 5);
 
     DeluxeBurger doubleCheeseburger = new DeluxeBurger("Double Cheeseburger");
@@ -17,16 +17,12 @@ public class MealOrderTest {
 
     @Test
     void burgerPrice() {
-        assertEquals(20, cheeseburger.getPrice());
+        cheeseburger.setPrice(1);
+        assertEquals(1, cheeseburger.getPrice());
     }
 
     @Test
     void doesBurgerPriceBelowOneThrowIllegalArgumentException() {
-/*
-        IllegalArgumentException priceBelowZero = Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            cheeseburger.setPrice(0);
-        });
- */
         IllegalArgumentException priceBelowZero = assertThrows(IllegalArgumentException.class, () -> cheeseburger.setPrice(0));
         assertEquals(priceBelowZero.getMessage(), "Price can't be below 1");
     }
@@ -49,9 +45,21 @@ public class MealOrderTest {
     }
 
     @Test
-    void drinkSize() {
-        assertEquals(20, wine.getSize());
+    void canSetTheSize() {
+        assertEquals(100, wine.getSize());
+        wine.setSize(150);
+        assertEquals(150, wine.getSize());
     }
+
+    @Test
+    void wineHasToBeAtLeastOneHundred() {
+        try {
+            new Drink("Red Wine", 99);
+        } catch (IllegalArgumentException e) {
+            System.out.printf(e.getMessage());
+        }
+    }
+
 
     @Test
     void doesDrinkSizeBelowOneHundredThrowIllegalArgumentException() {
@@ -61,7 +69,7 @@ public class MealOrderTest {
 
     @Test
     void drinkPrice() {
-        assertEquals(30, wine.getPrice());
+        assertEquals(150, wine.getPrice());
     }
 
     @Test
@@ -73,7 +81,6 @@ public class MealOrderTest {
     void sidePrice() {
         assertEquals(5, fries.getPrice());
     }
-
 
     @Test
     void doesSidePriceBelowOneThrowIllegalArgumentException() {
@@ -102,4 +109,9 @@ public class MealOrderTest {
         IllegalArgumentException maximumToppings = assertThrows(IllegalArgumentException.class, () -> doubleCheeseburger.setToppings(-1));
         assertEquals(maximumToppings.getMessage(), "Maximum of 5 toppings allowed and negative values are invalid");
     }
+
+//    @Test
+//    void mealOrderBurger() {
+//        assertEquals("Cheeseburger", "");
+//    }
 }

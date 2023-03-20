@@ -17,6 +17,6 @@ public class Side {
 
     public void setPrice(int price) {
         if (price < 1) throw new IllegalArgumentException("Price can't be below 1");
-        this.price = price;
+//        this.price = price;
     }
 }

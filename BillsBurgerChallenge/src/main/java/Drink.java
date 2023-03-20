@@ -4,7 +4,11 @@ public class Drink {
 
     public Drink(String type, double size) {
         this.type = type;
-        this.size = size;
+        setSize(size);
+    }
+
+    private static void extracted(double size) {
+        if (size < 100) throw new IllegalArgumentException("Drinks cant be less that 100 ml");
     }
 
     public String getType() {
@@ -19,8 +23,8 @@ public class Drink {
         return size;
     }
 
-    public void setSize(int size) {
-        if (size < 100) throw new IllegalArgumentException("Drinks cant be less that 100 ml");
+    public void setSize(double size) {
+        extracted(size);
         this.size = size;
     }
 
