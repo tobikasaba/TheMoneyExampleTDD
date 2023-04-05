@@ -143,7 +143,7 @@ public class CurrencyTest {
     @Test
     void finallyKeywordTest() throws Exception {
         try {
-            System.out.println("entering");
+//            System.out.println("entering");
             throw new Exception("Checked exception occurred");
         } finally {
             System.out.println("Whatever you want");

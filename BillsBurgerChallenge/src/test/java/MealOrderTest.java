@@ -100,13 +100,19 @@ public class MealOrderTest {
 
     @Test
     void deluxeBurgerToppings() {
+        doubleCheeseburger.setToppings(3, 5);
+        assertEquals(3, doubleCheeseburger.getToppings());
+    }
+
+    @Test
+    void settingToppingsOfTheDeluxeBurger() {
         doubleCheeseburger.setToppings(3);
         assertEquals(3, doubleCheeseburger.getToppings());
     }
 
     @Test
     void maximumOfFiveToppingsForDeluxeBurger() {
-        IllegalArgumentException maximumToppings = assertThrows(IllegalArgumentException.class, () -> doubleCheeseburger.setToppings(-1));
+        IllegalArgumentException maximumToppings = assertThrows(IllegalArgumentException.class, () -> doubleCheeseburger.setToppings(-1, 5));
         assertEquals(maximumToppings.getMessage(), "Maximum of 5 toppings allowed and negative values are invalid");
     }
 
