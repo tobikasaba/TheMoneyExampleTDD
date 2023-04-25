@@ -1,7 +1,5 @@
-public class Burger {
-    protected int toppings;
-    private int price;
-    private String type;
+public class Burger extends Items {
+
 
     public Burger(String type, int price) {
         this.type = type;

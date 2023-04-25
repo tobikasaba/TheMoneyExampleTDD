@@ -1,5 +1,5 @@
-public class Drink {
-    private String type;
+public class Drink extends Items {
+
     private double size;
 
     public Drink(String type, double size) {

@@ -1,6 +1,5 @@
-public class Side {
-    private int price;
-    private String type;
+public class Side extends Items {
+
 
     public Side(String type, int price) {
         this.type = type;
