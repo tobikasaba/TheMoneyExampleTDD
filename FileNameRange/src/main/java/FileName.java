@@ -1,34 +1,51 @@
-import java.util.Arrays;
-import java.util.Scanner;
-
+/**
+ * FileName class checks the index of files and add the first and last index of the keywords before the file extension from
+ * the files name to an array.
+ */
 public class FileName {
 
-    public FileName() {
+
+    public static String filePathLowerCase(String filePath) {
+        return filePath.toLowerCase();
     }
 
-    private static Scanner inputFile = new Scanner(System.in);
-
-    public int firstIndex(String file) {
-        return 0;
-    }
-
-    public int secondIndex(String file) {
-        char[] ch = file.toCharArray();
-        int i;
-        for (i = 0; i < ch.length; i++) {
-            if (i == file.indexOf(".")) {
-                break;
-            }
+    public static int keyWords(String filePath) {
+        filePath = filePathLowerCase(filePath);
+        if (filePath.contains("spec")) {
+            return filePath.lastIndexOf("spec");
+        } else if (filePath.contains("test")) {
+            return filePath.lastIndexOf("test");
+        } else {
+            return filePath.lastIndexOf("step");
         }
-        return i;
     }
 
-    public String addIndexToArray() {
-        int[] indexArray = {firstIndex("hiker.cpp"), secondIndex("hiker.cpp")};
-        return Arrays.toString(indexArray);
+    public static int separatorCharacters(String filePath) {
+        filePath = filePathLowerCase(filePath);
+        if (filePath.contains("-")) {
+            return filePath.lastIndexOf("-");
+        } else if(filePath.contains("_")){
+            return filePath.lastIndexOf("_");
+        }else{
+            String[] subWords = filePath.split("\\.");
+            return filePath.lastIndexOf("." + subWords[subWords.length - 2]);
+        }
     }
 
-    public int specialIndex(String file) {
-        return 5;
+    public Selection select(String filePath) {
+        filePath = filePathLowerCase(filePath);
+        int i = filePath.lastIndexOf(".");
+        int keyWordsIndex = keyWords(filePath);
+        int lastSlashIndex = filePath.lastIndexOf("/") + 1;
+        int lastSeparatorIndex = separatorCharacters(filePath);
+
+        if (filePath.contains("/")) {
+            return Selection.of(lastSlashIndex, i);
+        } else if (lastSeparatorIndex > 0) {
+            return Selection.of(0, lastSeparatorIndex);
+        } else if (keyWordsIndex != -1) {
+            return Selection.of(0, keyWordsIndex);
+        }
+        return Selection.of(0, i);
     }
 }
