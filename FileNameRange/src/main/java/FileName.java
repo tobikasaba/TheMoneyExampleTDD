@@ -12,12 +12,12 @@ public class FileName {
         return filePath.toLowerCase();
     }
 
-    public static int keyWords(String filePath) {
+    public static int findKeyWords(String filePath) {
         List<String> keyWordsList = Arrays.asList("spec", "test", "step");
         return loopMethod(filePath, keyWordsList);
     }
 
-    public static int separatorCharacters(String filePath) {
+    public static int findSeparatorCharacters(String filePath) {
         if (filePath.contains("-") || filePath.contains("_")) {
             List<String> separatorCharactersList = Arrays.asList("_", "-");
             return loopMethod(filePath, separatorCharactersList);
@@ -38,9 +38,9 @@ public class FileName {
 
     private static Selection getFileName(String filePath) {
         int i = filePath.lastIndexOf(".");
-        int keyWordsIndex = keyWords(filePath);
+        int keyWordsIndex = findKeyWords(filePath);
         int lastSlashIndex = filePath.lastIndexOf("/") + 1;
-        int lastSeparatorIndex = separatorCharacters(filePath);
+        int lastSeparatorIndex = findSeparatorCharacters(filePath);
 
         if (filePath.contains("/")) {
             if (lastSeparatorIndex > 0) {
