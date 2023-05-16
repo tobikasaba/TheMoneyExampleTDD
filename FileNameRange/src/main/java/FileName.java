@@ -38,26 +38,28 @@ public class FileName {
         return -1;
     }
 
-    public static int lastSeparatorIndex(String filePath) {
-        return separatorCharacters(filePath);
-    }
-
     public Selection select(String filePath) {
         filePath = filePathLowerCase(filePath);
-        int i = filePath.lastIndexOf(".");
-        int keyWordsIndex = keyWords(filePath);
-        int lastSlashIndex = filePath.lastIndexOf("/") + 1;
 
-        if (filePath.contains("/")) {
-            if (lastSeparatorIndex(filePath) > 0) {
-                return Selection.of(lastSlashIndex, lastSeparatorIndex(filePath));
+        if (!filePath.contains(".")) {
+            return Selection.of(0, filePath.length());
+        } else {
+            int i = filePath.lastIndexOf(".");
+            int keyWordsIndex = keyWords(filePath);
+            int lastSlashIndex = filePath.lastIndexOf("/") + 1;
+            int lastSeparatorIndex = separatorCharacters(filePath);
+
+            if (filePath.contains("/")) {
+                if (lastSeparatorIndex > 0) {
+                    return Selection.of(lastSlashIndex, lastSeparatorIndex);
+                }
+                return Selection.of(lastSlashIndex, i);
+            } else if (lastSeparatorIndex > 0) {
+                return Selection.of(0, lastSeparatorIndex);
+            } else if (keyWordsIndex != -1) {
+                return Selection.of(0, keyWordsIndex);
             }
-            return Selection.of(lastSlashIndex, i);
-        } else if (lastSeparatorIndex(filePath) > 0) {
-            return Selection.of(0, lastSeparatorIndex(filePath));
-        } else if (keyWordsIndex != -1) {
-            return Selection.of(0, keyWordsIndex);
+            return Selection.of(0, i);
         }
-        return Selection.of(0, i);
     }
 }
