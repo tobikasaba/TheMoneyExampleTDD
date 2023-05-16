@@ -24,51 +24,57 @@ public class FileNameTest {
 
     @Test
     void removesSpecAndExtension() {
-        assertEquals(Selection.of(0,7),fileName.select("DiamondSpec.kt"));
+        assertEquals(Selection.of(0, 7), fileName.select("DiamondSpec.kt"));
         System.out.println(fileName.select("DiamondSpec.kt"));
     }
 
     @Test
     void removesTestAndExtension() {
-        assertEquals(Selection.of(0,7),fileName.select("DiamondTest.kt"));
+        assertEquals(Selection.of(0, 7), fileName.select("DiamondTest.kt"));
         System.out.println(fileName.select("DiamondTest.kt"));
     }
+
     @Test
     void removesTestsAndExtension() {
-        assertEquals(Selection.of(0,7),fileName.select("DiamondTests.kt"));
+        assertEquals(Selection.of(0, 7), fileName.select("DiamondTests.kt"));
         System.out.println(fileName.select("DiamondTests.kt"));
     }
 
     @Test
     void removesStepAndExtension() {
-        assertEquals(Selection.of(0,7),fileName.select("DiamondStep.kt"));
+        assertEquals(Selection.of(0, 7), fileName.select("DiamondStep.kt"));
         System.out.println(fileName.select("DiamondStep.kt"));
     }
 
     @Test
-    void removesDirectoryAndExtension(){
-        assertEquals(Selection.of(12,17),fileName.select("wibble/test/hiker.rb"));
+    void removesDirectoryAndExtension() {
+        assertEquals(Selection.of(12, 17), fileName.select("wibble/test/hiker.rb"));
         System.out.println(fileName.select("wibble/test/hiker.rb"));
     }
 
     @Test
-    void removesUnderscoredSuffixAndExtension(){
-        assertEquals(Selection.of(0,5),fileName.select("hiker_Tests.rb"));
+    void removesUnderscoredSuffixAndExtension() {
+        assertEquals(Selection.of(0, 5), fileName.select("hiker_Tests.rb"));
 
     }
 
     @Test
-    void removesHyphenatedSuffixAndExtension(){
-        assertEquals(Selection.of(0,5),fileName.select("hiker-Tests.rb"));
+    void removesHyphenatedSuffixAndExtension() {
+        assertEquals(Selection.of(0, 5), fileName.select("hiker-Tests.rb"));
 
     }
 
     /**
-     * For filenames including multiple "." characters
+     * For file names including multiple "." characters
      */
     @Test
-    void removesDoubleBarrelledExtension(){
-        assertEquals(Selection.of(0,5),fileName.select("hiker.Tests.rb"));
+    void removesDoubleBarrelledExtension() {
+        assertEquals(Selection.of(0, 5), fileName.select("hiker.Tests.rb"));
 
+    }
+
+    @Test
+    void removesDirectoryUnderscoredSuffixAndExtension(){
+        assertEquals(Selection.of(12, 17), fileName.select("wibble/test/hiker_spec.rb"));
     }
 }
