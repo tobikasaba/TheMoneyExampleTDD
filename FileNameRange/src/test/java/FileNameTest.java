@@ -1,14 +1,3 @@
-//word keeps that has any of:
-// tests
-// test
-// spec
-// step
-// _
-// -
-// .
-// if the file name is in a directory, keep the file name
-
-
 import org.junit.jupiter.api.Test;
 
 import static org.testng.Assert.assertEquals;
@@ -75,5 +64,20 @@ public class FileNameTest {
     @Test
     void removesDirectoryUnderscoredSuffixAndExtension() {
         assertEquals(Selection.of(12, 17), fileName.select("wibble/test/hiker_spec.rb"));
+    }
+
+    @Test
+    void removesDirectoryHyphenatedSuffixAndExtension() {
+        assertEquals(Selection.of(12, 17), fileName.select("wibble/test/hiker-spec.rb"));
+    }
+
+    @Test
+    void removesDirectoryAndDoubleBarrelledExtension() {
+        assertEquals(Selection.of(12, 17), fileName.select("wibble/test/hiker.spec.rb"));
+    }
+
+    @Test
+    void removesAllTestOccurrenceDirectoryAndExtension(){
+        assertEquals(Selection.of(5, 10), fileName.select("test/hiker_test.exs"));
     }
 }
