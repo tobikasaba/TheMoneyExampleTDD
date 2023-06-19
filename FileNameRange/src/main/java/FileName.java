@@ -6,8 +6,6 @@ import java.util.List;
  * the files name to an array.
  */
 public class FileName {
-
-
     public static String filePathLowerCase(String filePath) {
         return filePath.toLowerCase();
     }

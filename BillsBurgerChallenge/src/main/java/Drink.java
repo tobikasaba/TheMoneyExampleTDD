@@ -3,6 +3,7 @@ public class Drink extends Items {
     private double size;
 
     public Drink(String type, double size) {
+        super();
         this.type = type;
         setSize(size);
     }

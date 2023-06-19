@@ -5,6 +5,5 @@ public class Items {
     protected int price;
 
     protected String type;
-
-
+    
 }
